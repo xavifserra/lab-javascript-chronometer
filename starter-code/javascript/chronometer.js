@@ -5,13 +5,18 @@ function Chronometer() {
 }
 
 Chronometer.prototype.startClick = function () {
-  var that = this;
+  //var that = this;//se puede hacer con BIND()
+
   // guardamos la referencia del this en var that y por el scope la podemos usar dentro con lo que podemos acceder al objeto
   this.intervalId = setInterval(function () { //this.intervalId siempre undefined
   //  console.log(that.currentTime); //se muestra bien por pantalla
-    that.currentTime++; //this.currentTime undefined (hay momentos que el debugger me dice que vale 0, como si se reiniciara).
-    that.setTime();
-  }, 10);
+  //  that.currentTime++; //this.currentTime undefined (hay momentos que el debugger me dice que vale 0, como si se reiniciara).
+  //  that.setTime();
+  this.setTime();
+  this.currentTime++; //this.currentTime undefined (hay momentos que el debugger me dice que vale 0, como si se reiniciara).
+
+  }.bind(this), 10);
+  
 };
 
 Chronometer.prototype.setMinutes = function () {
