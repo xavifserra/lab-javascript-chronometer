@@ -12,7 +12,7 @@ var refresh;
 
 function printTime() {
   printMinutes();
-  printSeconds();
+  printSeconds();                  
   printMilliseconds();
 }
 
